@@ -46,7 +46,7 @@ export default function Characters() {
         <Sidebar />
       </div>
 
-      <div className="bg-[url('/images/chars-bg.jpg')] bg-cover bg-[position:calc(50%+20px)_center] bg-fixed">
+      <div className="bg-[url('/images/chars-bg.jpg')] bg-cover bg-[position:calc(50%+20px)_center] w-full bg-fixed">
         <div className="min-h-screen bg-black/75">
           <PageWrapper>
             <h1 className="flex justify-center mb-4 lg:justify-start font-heading text-4xl sm:text-6xl lg:text-[96px] text-center text-[#FDD42D]">
@@ -55,13 +55,17 @@ export default function Characters() {
 
             {loading && (
               <div className="flex justify-center items-center h-40">
-                <p className="text-white text-xl">Loading characters...</p>
+                <p className="text-[#FDD42D] font-body text-xl">
+                  Loading characters...
+                </p>
               </div>
             )}
 
             {error && (
               <div className="flex justify-center items-center h-40">
-                <p className="text-white text-xl">Error: {error}</p>
+                <p className="text-[#FDD42D] font-body text-xl">
+                  Error: {error}
+                </p>
               </div>
             )}
 
