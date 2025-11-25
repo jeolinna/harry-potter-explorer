@@ -18,12 +18,12 @@ export const HOUSE_STYLES = {
     backgroundImage: "/images/slyth-bg.jpg",
   },
   Hufflepuff: {
-    container: "bg-[#DFBA20] border-[#1D1D1D]",
-    text: "text-[#1D1D1D]",
+    container: "bg-[#1D1D1D] border-[#DFBA20]",
+    text: "text-[#DFBA20]",
     input:
-      "bg-[#DFBA20] border-[#1D1D1D] text-[#1D1D1D] placeholder-[#1D1D1D]/50",
-    background: "bg-[#DFBA20]",
-    border: "border-[#1D1D1D]",
+      "bg-[#1D1D1D] border-[#DFBA20] text-[#DFBA20] placeholder-[#DFBA20]/50",
+    background: "bg-[#1D1D1D]",
+    border: "border-[#DFBA20]",
     backgroundImage: "/images/huffle-bg.jpg",
   },
   Ravenclaw: {
@@ -42,10 +42,13 @@ export const HOUSE_STYLES = {
       "bg-[#281A0F] border-[#FDD42D] text-[#FDD42D] placeholder-[#FDD42D]/50",
     background: "bg-[#281A0F]",
     border: "border-[#FDD42D]",
-    backgroundImage: "/images/default-bg.jpg",
+    backgroundImage: "/images/chars-bg.jpg",
   },
 };
 
 export const getHouseStyle = (house) => {
-  return HOUSE_STYLES[house] || HOUSE_STYLES.default;
+  if (!house || house.trim() === "" || !HOUSE_STYLES[house]) {
+    return HOUSE_STYLES.default;
+  }
+  return HOUSE_STYLES[house];
 };

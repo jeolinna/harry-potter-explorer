@@ -1,30 +1,47 @@
 import React from "react";
 import LinkButton from "./LinkButton";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { getHouseStyle } from "../constants/houseStyles";
 
-const Sidebar = () => {
+const Sidebar = ({ house = "default" }) => {
+  const location = useLocation();
+
+  const getCurrentHouse = () => {
+    if (house && house !== "default") {
+      return house;
+    }
+    if (location.pathname.includes("/characters/")) {
+      return "default";
+    }
+    return "default";
+  };
+
+  const currentHouse = getCurrentHouse();
+
+  const houseStyle = getHouseStyle(currentHouse);
+
   return (
-    <div className="flex flex-col gap-2 w-[270px] h-full px-4 py-5 bg-[#281A0F] border-r-2 border-[#3c2718]">
+    <div
+      className={`flex flex-col gap-2 w-[270px] h-full px-4 py-5 border-r-2 ${houseStyle.container}`}
+    >
       <Link
         to={"/"}
-        className="mb-2 text-4xl font-heading text-center text-[#FDD42D]"
+        className={`mb-2 text-4xl font-heading text-center ${houseStyle.text}`}
       >
         Harry Potter Explorer
       </Link>
       <input
         type="text"
         placeholder="Search characters..."
-        className="w-full mb-2 px-2 py-1 bg-[#281A0F] border border-[#FDD42D] text-[#FDD42D] font-body placeholder-[#f8d95c6a] focus:outline-none focus:ring-2 focus:ring-[#FDD42D] focus:border-transparent"
+        className={`w-full mb-2 px-2 py-1 border focus:outline-none focus:ring-2 focus:border-transparent ${houseStyle.input}`}
       />
 
-      {/* <div className="flex flex-col gap-2"> */}
-      <LinkButton to={"/characters"} className="text-xl">
+      <LinkButton to={"/characters"} className="text-xl" house={currentHouse}>
         Characters
       </LinkButton>
-      <LinkButton to={"#"} className="text-xl">
+      <LinkButton to={"#"} className="text-xl" house={currentHouse}>
         Spells
       </LinkButton>
-      {/* </div> */}
     </div>
   );
 };
