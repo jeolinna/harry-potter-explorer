@@ -9,3 +9,7 @@ export async function fetchCharacters() {
 
   return res.json();
 }
+
+export function getCharacterById(characters, id) {
+  return characters.find((character) => character.id === id);
+}
