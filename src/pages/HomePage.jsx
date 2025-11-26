@@ -16,7 +16,10 @@ function HomePage() {
             >
               Characters
             </LinkButton>
-            <LinkButton to={"#"} className="text-sm sm:text-xl lg:text-4xl">
+            <LinkButton
+              to={"/spells"}
+              className="text-sm sm:text-xl lg:text-4xl"
+            >
               Spells
             </LinkButton>
           </div>

@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import PageWrapper from "../components/PageWrapper";
 import { getHouseStyle } from "../constants/houseStyles";
 
-const CharacterDetails = () => {
+const CharacterDetailsPage = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -42,7 +42,7 @@ const CharacterDetails = () => {
   const houseStyle = getHouseStyle(character?.house);
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen lg:ml-[270px]">
       <div className="hidden lg:block">
         <Sidebar house={character?.house} />
       </div>
@@ -139,4 +139,4 @@ const CharacterDetails = () => {
   );
 };
 
-export default CharacterDetails;
+export default CharacterDetailsPage;

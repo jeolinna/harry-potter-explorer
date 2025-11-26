@@ -17,3 +17,18 @@
   font-style: normal;
   font-weight: 400;
 }
+
+/* * {
+  cursor: url("/cursors/wand.cur"), 5 5, auto !important;
+}
+
+button,
+a,
+[role="button"],
+Link {
+  cursor: url("/cursors/wand-pointer.cur"), 5 5, auto !important;
+} */
+
+body {
+  background-color: #020001;
+}

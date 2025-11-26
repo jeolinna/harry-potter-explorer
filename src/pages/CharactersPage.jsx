@@ -5,7 +5,7 @@ import Pagination from "../components/Pagination";
 import PageWrapper from "../components/PageWrapper";
 import Sidebar from "../components/Sidebar";
 
-export default function Characters() {
+const CharactersPage = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -41,7 +41,7 @@ export default function Characters() {
   };
 
   return (
-    <div className="flex min-h-screen ">
+    <div className="flex min-h-screen lg:ml-[270px]">
       <div className="hidden lg:block">
         <Sidebar />
       </div>
@@ -89,4 +89,6 @@ export default function Characters() {
       </div>
     </div>
   );
-}
+};
+
+export default CharactersPage;

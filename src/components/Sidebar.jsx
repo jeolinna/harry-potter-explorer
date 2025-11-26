@@ -22,7 +22,7 @@ const Sidebar = ({ house = "default" }) => {
 
   return (
     <div
-      className={`flex flex-col gap-2 w-[270px] h-full px-4 py-5 border-r-2 ${houseStyle.container}`}
+      className={`flex flex-col gap-2 w-[270px] h-full px-4 py-5 border-r-2 fixed left-0 top-0 overflow-y-auto ${houseStyle.container}`}
     >
       <Link
         to={"/"}
@@ -39,7 +39,7 @@ const Sidebar = ({ house = "default" }) => {
       <LinkButton to={"/characters"} className="text-xl" house={currentHouse}>
         Characters
       </LinkButton>
-      <LinkButton to={"#"} className="text-xl" house={currentHouse}>
+      <LinkButton to={"/spells"} className="text-xl" house={currentHouse}>
         Spells
       </LinkButton>
     </div>
