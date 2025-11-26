@@ -4,24 +4,29 @@ import CharactersPage from "./pages/CharactersPage";
 import CharacterDetailsPage from "./pages/CharacterDetails";
 import SpellsPage from "./pages/SpellsPage";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <HomePage />,
+    },
+    {
+      path: "/characters",
+      element: <CharactersPage />,
+    },
+    {
+      path: "/characters/:id",
+      element: <CharacterDetailsPage />,
+    },
+    {
+      path: "/spells",
+      element: <SpellsPage />,
+    },
+  ],
   {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/characters",
-    element: <CharactersPage />,
-  },
-  {
-    path: "/characters/:id",
-    element: <CharacterDetailsPage />,
-  },
-  {
-    path: "/spells",
-    element: <SpellsPage />,
-  },
-]);
+    basename: import.meta.env.BASE_URL,
+  }
+);
 
 function App() {
   return <RouterProvider router={router} />;
