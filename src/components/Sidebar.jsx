@@ -3,8 +3,9 @@ import LinkButton from "./LinkButton";
 import { Link, useLocation } from "react-router-dom";
 import { getHouseStyle } from "../constants/houseStyles";
 import SearchBar from "./SearchBar";
+import { X } from "lucide-react";
 
-const Sidebar = ({ house = "default" }) => {
+const Sidebar = ({ house = "default", open, onClose }) => {
   const location = useLocation();
 
   const getCurrentHouse = () => {
@@ -21,25 +22,56 @@ const Sidebar = ({ house = "default" }) => {
   const houseStyle = getHouseStyle(currentHouse);
 
   return (
-    <div
-      className={`flex flex-col gap-2 w-[270px] h-full px-4 py-5 border-r-2 fixed left-0 top-0 overflow-y-auto ${houseStyle.container}`}
-    >
-      <Link
-        to={"/"}
-        className={`mb-2 text-4xl font-heading text-center ${houseStyle.text}`}
+    <>
+      {open && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={onClose}
+        />
+      )}
+
+      <div
+        className={`flex flex-col gap-2 w-full lg:w-[270px] px-4  h-full  py-5 lg:border-r-2 fixed left-0 top-0 transition-transform duration-300 z-50 ${
+          houseStyle.container
+        } ${
+          open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        } lg:z-auto`}
       >
-        Harry Potter Explorer
-      </Link>
+        <button
+          onClick={onClose}
+          className={`self-end lg:hidden ${houseStyle.text} mb-2`}
+        >
+          <X size={24} />
+        </button>
 
-      <SearchBar houseStyle={houseStyle} />
+        <Link
+          to={"/"}
+          className={`mb-2 text-4xl font-heading text-center ${houseStyle.text}`}
+          onClick={() => window.innerWidth < 1024 && onClose()}
+        >
+          Harry Potter Explorer
+        </Link>
 
-      <LinkButton to={"/characters"} className="text-xl" house={currentHouse}>
-        Characters
-      </LinkButton>
-      <LinkButton to={"/spells"} className="text-xl" house={currentHouse}>
-        Spells
-      </LinkButton>
-    </div>
+        <SearchBar houseStyle={houseStyle} />
+
+        <LinkButton
+          to={"/characters"}
+          className="text-xl"
+          house={currentHouse}
+          onClick={() => window.innerWidth < 1024 && onClose()}
+        >
+          Characters
+        </LinkButton>
+        <LinkButton
+          to={"/spells"}
+          className="text-xl"
+          house={currentHouse}
+          onClick={() => window.innerWidth < 1024 && onClose()}
+        >
+          Spells
+        </LinkButton>
+      </div>
+    </>
   );
 };
 
