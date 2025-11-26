@@ -104,7 +104,7 @@ const CharacterDetailsPage = () => {
                       />
                     ) : (
                       <img
-                        src="/images/wanted.jpg"
+                        src={`${import.meta.env.BASE_URL}images/wanted.jpg`}
                         alt="Default character"
                         className="w-full h-full object-contain object-[center_0] bg-[#281A0F]"
                       />
