@@ -14,7 +14,7 @@ const CharacterCard = ({ character }) => {
         ) : (
           <img
             src="/images/wanted.jpg"
-            alt="Default character"
+            alt={character.name}
             className="w-full h-full object-contain object-[center_0] bg-[#281A0F]"
           />
         )}

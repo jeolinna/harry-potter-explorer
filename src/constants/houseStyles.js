@@ -6,7 +6,7 @@ export const HOUSE_STYLES = {
       "bg-[#360B0B] border-[#E7A32F] text-[#E7A32F] placeholder-[#E7A32F]/50",
     background: "bg-[#360B0B]",
     border: "border-[#E7A32F]",
-    backgroundImage: "/images/gryff-bg.jpg",
+    backgroundImage: "/harry-potter-explorer/images/gryff-bg.jpg",
   },
   Slytherin: {
     container: "bg-[#122915] border-[#AFB6C1]",
@@ -15,7 +15,7 @@ export const HOUSE_STYLES = {
       "bg-[#122915] border-[#AFB6C1] text-[#AFB6C1] placeholder-[#AFB6C1]/50",
     background: "bg-[#122915]",
     border: "border-[#AFB6C1]",
-    backgroundImage: "/images/slyth-bg.jpg",
+    backgroundImage: "/harry-potter-explorer/images/slyth-bg.jpg",
   },
   Hufflepuff: {
     container: "bg-[#1D1D1D] border-[#DFBA20]",
@@ -24,7 +24,7 @@ export const HOUSE_STYLES = {
       "bg-[#1D1D1D] border-[#DFBA20] text-[#DFBA20] placeholder-[#DFBA20]/50",
     background: "bg-[#1D1D1D]",
     border: "border-[#DFBA20]",
-    backgroundImage: "/images/huffle-bg.jpg",
+    backgroundImage: "/harry-potter-explorer/images/huffle-bg.jpg",
   },
   Ravenclaw: {
     container: "bg-[#18283D] border-[#BBA698]",
@@ -33,7 +33,7 @@ export const HOUSE_STYLES = {
       "bg-[#18283D] border-[#BBA698] text-[#BBA698] placeholder-[#BBA698]/50",
     background: "bg-[#18283D]",
     border: "border-[#BBA698]",
-    backgroundImage: "/images/raven-bg.jpg",
+    backgroundImage: "/harry-potter-explorer/images/raven-bg.jpg",
   },
   default: {
     container: "bg-[#281A0F] border-[#FDD42D]",
@@ -42,7 +42,7 @@ export const HOUSE_STYLES = {
       "bg-[#281A0F] border-[#FDD42D] text-[#FDD42D] placeholder-[#FDD42D]/50",
     background: "bg-[#281A0F]",
     border: "border-[#FDD42D]",
-    backgroundImage: "/images/chars-bg.jpg",
+    backgroundImage: "/harry-potter-explorer/images/chars-bg.jpg",
   },
 };
 
