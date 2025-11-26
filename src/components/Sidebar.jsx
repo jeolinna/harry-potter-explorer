@@ -2,6 +2,7 @@ import React from "react";
 import LinkButton from "./LinkButton";
 import { Link, useLocation } from "react-router-dom";
 import { getHouseStyle } from "../constants/houseStyles";
+import SearchBar from "./SearchBar";
 
 const Sidebar = ({ house = "default" }) => {
   const location = useLocation();
@@ -17,7 +18,6 @@ const Sidebar = ({ house = "default" }) => {
   };
 
   const currentHouse = getCurrentHouse();
-
   const houseStyle = getHouseStyle(currentHouse);
 
   return (
@@ -30,11 +30,8 @@ const Sidebar = ({ house = "default" }) => {
       >
         Harry Potter Explorer
       </Link>
-      <input
-        type="text"
-        placeholder="Search characters..."
-        className={`w-full mb-2 px-2 py-1 border focus:outline-none focus:ring-2 focus:border-transparent ${houseStyle.input}`}
-      />
+
+      <SearchBar houseStyle={houseStyle} />
 
       <LinkButton to={"/characters"} className="text-xl" house={currentHouse}>
         Characters
