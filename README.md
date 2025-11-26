@@ -1,16 +1,35 @@
-# React + Vite
+# Harry Potter Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A magical React application for exploring the Wizarding World - browse characters and spells from the Harry Potter universe.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Characters Gallery** - Browse all characters with pagination
+- **Character Details** - Detailed profiles with house-specific theming
+- **Spells Collection** - Complete list of magical spells
+- **House Themes** - Dynamic color schemes based on character houses
+- **Responsive Design** - Mobile-friendly with slide-out navigation
+- **Search Functionality** - Find characters quickly
 
-## React Compiler
+## House Themes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Gryffindor** - Red & Gold
+- **Slytherin** - Green & Silver
+- **Hufflepuff** - Yellow & Black
+- **Ravenclaw** - Blue & Bronze
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+[**View Live Site**](https://jeolinna.github.io/harry-potter-explorer/)
+
+## Built With
+
+- React 19
+- React Router
+- Tailwind CSS
+- Vite
+- Harry Potter API
+
+---
+
+_Mischief managed!_
